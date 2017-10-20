@@ -16,7 +16,9 @@ const readWords = () => {
 // TODO: your code to handle requests
 
 server.get('/greet-me', (req, res) => {
-  res.send('<h1>Hello!</h1>');
+  // e.g. localhost:3000/greet-me?name=karthik
+  const name = req.query.name;
+  res.send(`<h1>Hello ${name}!</h1>`);
 });
 
 server.get('/', (req, res) => {
@@ -46,8 +48,9 @@ server.get('/lesson-plan', (req, res) => {
   res.json(lessonPlan);
 });
 
-server.listen(3000);
+// https://www.google.com/search?q=node.js&oq=node.js&aqs=chrome..69i57j5j0l4.659j0j7&sourceid=chrome&ie=UTF-8
 
+server.listen(3000);
 
 // JSON = JavaScript Object Notation
 // A way to represent a JS object as a string
